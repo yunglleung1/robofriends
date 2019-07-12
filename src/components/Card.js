@@ -2,7 +2,7 @@ import React from 'react';
 import './card.css'
 
 const Card = (props) => {
-  const {id, name, email} = props.bot;//destructuring
+  const {id, name, email} = props.bot;
   return(
     <div className = "card">
       <img src = {`https://robohash.org/${id}?size=200x200`} alt = 'Robot Pic'/>

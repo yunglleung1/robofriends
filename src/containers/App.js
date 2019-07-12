@@ -11,10 +11,10 @@ import {connect} from 'react-redux';
 
 const mapStateToProps = (state) => {
   return {
-    searchField: state.searchRobots.searchField,//update for multiple reducer
-    robots: state.requestRobots.robots,//added for 2nd reducer
-    isPending: state.requestRobots.isPending,//also from  2nd reducer
-    error: state.requestRobots.error//also from  2nd reducer
+    searchField: state.searchRobots.searchField,
+    robots: state.requestRobots.robots,
+    isPending: state.requestRobots.isPending,
+    error: state.requestRobots.error
   }
 }
 
@@ -25,7 +25,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const connector = connect(mapStateToProps, mapDispatchToProps);//connect returns a higher order function
+const connector = connect(mapStateToProps, mapDispatchToProps);
 
 class App extends Component {
   componentDidMount(){
@@ -38,7 +38,6 @@ class App extends Component {
       return bot.name.toLowerCase().includes(searchField.toLowerCase());
     });
 
-    // if(!isPending){
       return (
         <div className = 'App'>
           <Header/>
@@ -55,9 +54,6 @@ class App extends Component {
           </Scroll>
         </div>
       );
-    // } else{
-      // return 'LOADING...PLEASE WAIT'
-    // }
   }
 
 }
