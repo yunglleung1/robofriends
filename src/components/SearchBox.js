@@ -3,6 +3,7 @@ import './SearchBox.css';
 
 const SearchBox = (props) => {
   return <input
+  aria-label = 'Search Robots'
   type = 'search'
   placeholder = 'search robots'
   onChange = {props.onSearchChange}
